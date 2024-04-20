@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="pageTitle">Welcome to Florida</h1>
+        <p id="introText">Discover the Sunshine State</p>
+    </header>
+
+    <nav>
+        <ul class="dropdown-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tallahassee.html">Tallahassee</a></li>
+            <li><a href="miami.html">Miami</a></li>
+            <li><a href="orlando.html">Orlando</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Explore Florida</h2>
+            <p>
+                Florida is a diverse and vibrant state located in the southeastern United States.
+                Known for its beautiful beaches, rich cultural heritage, and dynamic cities, Florida
+                offers a unique blend of experiences for residents and visitors alike.
+            </p>
+            <p>
+                From the capital city of Tallahassee to the bustling streets of Miami and the
+                magical attractions of Orlando, each city has its own charm and attractions waiting
+                to be explored.
+            </p>
+            <img src="florida.jpg">
+            <form id="contactForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <label for="confirmEmail">Confirm Email Address:</label>
+                <input type="email" id="confirmEmail" name="confirmEmail" placeholder="Confirm your email address" required>
+
+                <label for="question">Ask a Question:</label>
+                <textarea id="question" name="question" placeholder="Type your question here"></textarea>
+
+                <p id="emailMatchMessage" style="color: red;"></p>
+
+                <button type="button" onclick="validateEmails()">Verify Email Match</button>
+            </form>
+        </section>
+
+        <aside>
+            <h3>State Information</h3>
+            <p id="relatedInfo">Plan your visit to Florida and make the most of your stay. Explore the stunning beaches
+                along the Gulf of Mexico and the Atlantic Ocean. Don't miss the vibrant nightlife in Miami
+                or the cultural events in Tallahassee. Discover theme parks and entertainment in Orlando.
+                Whether you're a nature enthusiast, history buff, or thrill-seeker, Florida has something
+                for everyone.
+            </p>
+            <img src="florida-beaches.jpg" alt="Florida beaches">
+        </aside>
+
+        <footer>
+            <p>&copy; 2024 Florida Tourism. All rights reserved.</p>
+        </footer>
+        
+    </main>
+
+    <script src="script.js"></script>
+
+    <script>
+        function validateEmails() {
+            var email = document.getElementById('email').value;
+            var confirmEmail = document.getElementById('confirmEmail').value;
+            var message = document.getElementById('emailMatchMessage');
+
+            if (email === confirmEmail) {
+                message.textContent = 'Emails match!';
+                message.style.color = 'green';
+            } else {
+                message.textContent = 'Emails do not match. Please check again.';
+                message.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>
